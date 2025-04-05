@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: problems
+  datasource:
+    url: jdbc:postgresql://localhost:5432/problems-db
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 38080
+
+auth:
+  secret: some-really-strong-secret
+
+logging:
+  level:
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
