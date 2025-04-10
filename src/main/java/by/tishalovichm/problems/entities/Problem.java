@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -22,7 +24,15 @@ public class Problem {
     @JoinColumn(name = "section-id")
     private ProblemSection section;
 
+    @ManyToOne
+    @JoinColumn(name = "difficulty-id")
+    private Difficulty difficulty;
+
     @Column(name = "description")
     private String description;
+
+    @OneToMany
+    @JoinColumn(name = "problem-id")
+    private List<InputOutputExample> inputOutputExamples;
 
 }

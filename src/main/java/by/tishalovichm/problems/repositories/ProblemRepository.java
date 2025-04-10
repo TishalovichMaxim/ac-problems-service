@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ProblemRepository extends CrudRepository<Problem, Long> {
 
-    @EntityGraph(attributePaths = "section")
+    @EntityGraph(attributePaths = {"section", "difficulty", "inputOutputExamples"})
     Page<Problem> findAll(Pageable pageable);
 
 }
